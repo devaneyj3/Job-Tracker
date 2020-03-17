@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 
 import './css/index.scss';
-import TodoForm from './components/TodoForm';
-import ShowTodos from './components/ShowTodos';
+import TodoForm from './components/TodoForm.jsx';
+import ShowTodos from './components/ShowTodos.jsx';
 
 function App() {
 
-  const [todo, setTodo] = useState([{
-      id: Date.now(),
-      name: '',
-      completed: false
-
-  }]
-  )
+  const [todo, setTodo] = useState([])
 
   const saveNewTodo = value => {
     setTodo(

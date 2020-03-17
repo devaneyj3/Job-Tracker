@@ -1,11 +1,17 @@
-.todoList {
-    .todoItems {
-        border: 1px groove red;
-        margin: 2% 0 2% 0;
-        padding: 2%;
-        width: 10%;
-        li {
-            list-style: none;
+body {
+    text-align: center;
+    .todoList {
+        .todoItems {
+            border: 1px groove grey;
+            background-color: lightgray;
+            color: white;
+            margin: 2% 0 2% 0;
+            padding: 2%;
+            width: 10%;
+            li {
+                list-style: none;
+                margin-bottom: 10%;
+            }
         }
     }
 }
