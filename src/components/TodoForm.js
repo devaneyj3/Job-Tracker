@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useInput from './customHook'
 
 const TodoForm = props => {
-    const [newTodo, setNewTodo] = useState('');
+    const [newTodo, setNewTodo, handleInputChange] = useInput('');
 
-    const handleInputChange = (e) => {
-        setNewTodo(e.target.value);
-    }
     const submitNewTodo = (e) => {
         e.preventDefault()
         props.saveNewTodo(newTodo)
