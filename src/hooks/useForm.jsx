@@ -1,7 +1,8 @@
-import {useState} from 'react';
 
-const useForm = (initialValue, cb) => {
-    const [value, setValue] = useState(initialValue);
+import useLocalStorage from './useLocalStorage'
+
+const useForm = (key, initialValue, cb) => {
+    const [value, setValue] = useLocalStorage(key, initialValue);
     const handleInputChange = (e) => {
         setValue({...value, [e.target.name]:e.target.value});
     };

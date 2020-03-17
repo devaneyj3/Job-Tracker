@@ -2,7 +2,9 @@ import React from 'react';
 import useForm from '../hooks/useForm';
 
 const JobForm = props => {
-    const [values, handleChange, submitNewJob] = useForm({
+    const [values, handleChange, submitNewJob] = useForm(
+        'signUpform',
+        {
         newJob: '',
         city: ''
     }, () => props.saveNewJob(values.newJob, values.city));
