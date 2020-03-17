@@ -8,11 +8,12 @@ function App() {
 
   const [jobApplication, setJobApplication] = useState([])
 
-  const saveNewJob = value => {
+  const saveNewJob = (value, cityValue) => {
     setJobApplication(
     [...jobApplication,{
       id: Date.now(),
       name: value,
+      city: cityValue,
       completed: false
 
     }])
