@@ -3,11 +3,11 @@ import React from 'react';
 const ShowTodos = props => {
     return (
         <>
-        <ul className='todoList'>
-            {props.todos.map(todo => {
+        <ul className='jobList'>
+            {props.jobs.map(job => {
                 return (
-                    <div className='todoItems'>
-                        <li key={todo.id}>{todo.name}</li>
+                    <div className='jobItems'>
+                        <li key={job.id}>{job.name}</li>
                         <button>Edit</button>
                         <button>Delete</button>
                     </div>

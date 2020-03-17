@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
 import './css/index.scss';
-import TodoForm from './components/TodoForm.jsx';
-import ShowTodos from './components/ShowTodos.jsx';
+import JobForm from './components/JobForm.jsx';
+import ShowJobs from './components/ShowJobs.jsx'
 
 function App() {
 
-  const [todo, setTodo] = useState([])
+  const [jobApplication, setJobApplication] = useState([])
 
-  const saveNewTodo = value => {
-    setTodo(
-    [...todo,{
+  const saveNewJob = value => {
+    setJobApplication(
+    [...jobApplication,{
       id: Date.now(),
       name: value,
       completed: false
@@ -19,9 +19,9 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Add A Todo Below</h1>
-      <TodoForm saveNewTodo={saveNewTodo} />
-      <ShowTodos todos={todo}/>
+      <h1>Add a Job Job Application To Track</h1>
+      <JobForm saveNewJob={saveNewJob} />
+      <ShowJobs jobs={jobApplication}/>
     </div>
   );
 }
