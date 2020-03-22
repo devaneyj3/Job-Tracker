@@ -12,6 +12,7 @@ const JobForm = props => {
         <div className='jobForm'>
             <form onSubmit={submitNewJob}>
                 <input type="text" 
+                    data-testid = "newJob"
                     name = 'newJob'
                     placeholder="Add Company"
                     onChange={handleChange}
@@ -19,6 +20,7 @@ const JobForm = props => {
                     ></input>
                     <input type="text" 
                     name='city'
+                    data-testid = 'city'
                     placeholder="Add City"
                     onChange={handleChange}
                     value={values.city}
