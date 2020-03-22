@@ -3,6 +3,7 @@ import { render, getByText, getByTestId } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
 import JobForm from './components/JobForm';
+import ShowJobs from './components/ShowJobs';
 
 test('Render App Component', () => {
   render(<App />);
@@ -28,3 +29,10 @@ test('Input to enter city is present', () => {
   expect(cityInput).toBeInTheDocument();
 
 })
+
+test('Renders show jobs component', () => {
+  const job = [ { id: Date.now(), name: "Inc", city: "Star City", completed: false } ];
+  render(<ShowJobs jobs={job}/>)
+})
+
+//test to show if data sumits onSubmit from JobForm button
