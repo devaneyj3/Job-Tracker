@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './css/index.scss';
+import './scss/index.scss';
 import JobForm from './components/JobForm.jsx';
 import ShowJobs from './components/ShowJobs.jsx'
 
