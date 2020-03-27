@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import './scss/index.scss';
 import JobForm from './components/JobForm.jsx';
 import ShowJobs from './components/ShowJobs.jsx'
+import { JobsContext } from './context/Jobs';
 
 function App() {
 
@@ -20,9 +21,13 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Add a Job Job Application To Track</h1>
-      <JobForm saveNewJob={saveNewJob} />
-      <ShowJobs jobs={jobApplication}/>
+      <JobsContext.Provider value={{
+        jobs: jobApplication,
+        save: saveNewJob}}>
+        <h1>Add a Job Job Application To Track</h1>
+        <JobForm />
+        <ShowJobs/>
+      </JobsContext.Provider>
     </div>
   );
 }

@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useForm from '../hooks/useForm';
+import { JobsContext } from '../context/Jobs';
 
-const JobForm = props => {
+
+const JobForm = () => {
+    const jobs = useContext(JobsContext)
     const [values, handleChange, submitNewJob] = useForm(
         'signUpform',
         {
         newJob: '',
         city: ''
-    }, () => props.saveNewJob(values.newJob, values.city));
+    }, () => jobs.save(values.newJob, values.city));
     return (
         <div className='jobForm'>
             <form onSubmit={submitNewJob}>

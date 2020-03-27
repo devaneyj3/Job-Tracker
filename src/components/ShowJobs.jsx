@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { JobsContext } from '../context/Jobs';
 
-const ShowJobs = props => {
+const ShowJobs = () => {
+
+    const JobContext = useContext(JobsContext);
+    console.log(JobContext)
     return (
         <>
         <p>Here are the jobs you applied to:</p>
         <ul className='jobList'>
-            {props.jobs.map(job => {
+            {JobContext.jobs.map(job => {
                 return (
                     <div className='jobItems'>
                         <li key={job.id}>Name: {job.name}</li>
