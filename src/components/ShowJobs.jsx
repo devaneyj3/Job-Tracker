@@ -4,22 +4,21 @@ import { JobsContext } from '../context/Jobs';
 const ShowJobs = () => {
 
     const JobContext = useContext(JobsContext);
-    console.log(JobContext)
     return (
         <>
         <p>Here are the jobs you applied to:</p>
-        <ul className='jobList'>
+        <div className='jobList'>
             {JobContext.jobs.map(job => {
                 return (
                     <div className='jobItems'>
-                        <li key={job.id}>Name: {job.name}</li>
+                        <div key={job.id}>Company: {job.name}</div>
                         <p>City: {job.city}</p>
                         <button>Edit</button>
-                        <button>Delete</button>
+                        <button onClick={() => JobContext.delete(job.id)}>Delete</button>
                     </div>
                 )
             })}
-            </ul>
+            </div>
         </>
     )
 }

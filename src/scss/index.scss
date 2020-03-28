@@ -1,13 +1,19 @@
 body {
     text-align: center;
+    color: white;;
+    background-color: grey;
     .jobList {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         .jobItems {
             border: 1px groove grey;
             background-color: lightgray;
-            color: white;
+            color: black;
+            font-weight: bold;
             margin: 2% 0 2% 0;
             padding: 2%;
-            width: 75%;
+            width: 50%;
             li {
                 list-style: none;
                 margin-bottom: 11%;
