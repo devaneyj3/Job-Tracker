@@ -7,12 +7,7 @@ import { JobsContext } from './context/Jobs';
 
 function App() {
 
-  const [jobApplication, setJobApplication] = useState([{
-    id: Date.now(),
-    name: "Inc",
-    city: "Whitmore Lake",
-    completed: false,
-  }])
+  const [jobApplication, setJobApplication] = useState([])
 
   const saveNewJob = (value, cityValue) => {
     setJobApplication(
@@ -24,9 +19,11 @@ function App() {
 
     }])}
   const deleteJob = id => {
-    const findJobToDelete = jobApplication.find(jobApp => jobApp.id === id);
-    console.log(findJobToDelete);
-    }
+    const filterJobs = jobApplication.filter(jobApp => jobApp.id !== id);
+    setJobApplication(
+      [...filterJobs],
+    )
+  }
   return (
     <div className="App">
       <JobsContext.Provider value={{
