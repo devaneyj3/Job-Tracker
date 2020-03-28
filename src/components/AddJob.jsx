@@ -9,8 +9,9 @@ const JobForm = () => {
         'signUpform',
         {
         newJob: '',
-        city: ''
-    }, () => jobs.save(values.newJob, values.city));
+        city: '',
+        postion: ''
+    }, () => jobs.save(values.newJob, values.city, values.position));
     return (
         <div className='jobForm'>
             <form onSubmit={submitNewJob}>
@@ -27,6 +28,13 @@ const JobForm = () => {
                     placeholder="Add City"
                     onChange={handleChange}
                     value={values.city}
+                    ></input>
+                    <input type="text" 
+                    data-testid = "position"
+                    name = 'position'
+                    placeholder="Add Position"
+                    onChange={handleChange}
+                    value={values.position}
                     ></input>
                 <button>Add Application</button>
             </form>

@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 
 import './scss/index.scss';
-import JobForm from './components/JobForm.jsx';
-import ShowJobs from './components/ShowJobs.jsx'
+import AddJob from './components/AddJob.jsx';
+import Applied from './components/Applied.jsx'
+import Offered from './components/Offered';
+import Rejected from './components/Rejected';
+import Interviewed from './components/Interviewed';
 import { JobsContext } from './context/Jobs';
 
 function App() {
 
   const [jobApplication, setJobApplication] = useState([])
 
-  const saveNewJob = (value, cityValue) => {
+  const saveNewJob = (value, cityValue, positionValue) => {
     setJobApplication(
     [...jobApplication,{
       id: Date.now(),
       name: value,
       city: cityValue,
+      position: positionValue,
       completed: false
 
     }])}
@@ -31,8 +35,13 @@ function App() {
         save: saveNewJob,
         delete: deleteJob}}>
         <h1>Add a Job Job Application To Track</h1>
-        <JobForm />
-        <ShowJobs/>
+        <AddJob />
+        <div className='containers'>
+          <Applied/>
+          <Offered />
+          <Rejected />
+          <Interviewed />
+        </div>
       </JobsContext.Provider>
     </div>
   );

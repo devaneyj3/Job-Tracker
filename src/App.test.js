@@ -2,8 +2,8 @@ import React from 'react';
 import { render, getByText, getByTestId } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
-import JobForm from './components/JobForm';
-import ShowJobs from './components/ShowJobs';
+import JobForm from './components/AddJob';
+import ShowJobs from './components/Applied';
 
 test('Render App Component', () => {
   render(<App />);
